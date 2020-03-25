@@ -1,0 +1,25 @@
+ion-content ion-toolbar {
+  --background: translucent;
+}
+
+.red {
+  color: red
+}
+
+.blue {
+  color:blue
+}
+.temp {
+  font-size: 1.2rem
+}
+.forecast {
+  display:inline-block;
+  margin:0.3rem;
+  text-align:center
+}
+.weatherIcon {
+  font-size:2rem
+}
+.day {
+  font-weight:600
+}

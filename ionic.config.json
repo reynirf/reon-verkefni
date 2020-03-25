@@ -1,0 +1,7 @@
+{
+  "name": "reon-vedur",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

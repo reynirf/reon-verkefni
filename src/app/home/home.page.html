@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Weather
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Weather</ion-title>
+    </ion-toolbar>
+    <ion-searchbar [(ngModel)]="newStationSearch" showCancelButton="focus" cancelButtonText="Cancel" placeholder="City"></ion-searchbar>
+    <ion-button (click)="addStation()" expand="block">Add city</ion-button>
+  </ion-header>
+
+  <ion-list>
+    <ion-card (click)="moreInformation(forecast)" *ngFor="let forecast of data">
+      <ion-card-header>
+        <ion-card-subtitle>{{forecast.name}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="forecast" *ngFor="let curr of forecast.weather"> 
+          <p class="red temp" *ngIf="curr.main.temp > 0">{{curr.main.temp}}°</p>
+          <p class="blue temp" *ngIf="curr.main.temp <= 0">{{curr.main.temp}}°</p>
+          <ion-icon class="weatherIcon" name="{{curr.weather[0].icon}}"></ion-icon>
+          <p>{{curr.weather[0].main}}</p>
+          <p class="day">{{curr.day}}</p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
