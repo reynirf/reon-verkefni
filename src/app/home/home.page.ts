@@ -75,7 +75,8 @@ export class HomePage {
   		} 
   	})
   	nextFiveDays = nextFiveDays.map((curr) => {
-  		curr.main.temp = parseInt(curr.main.temp - 273.15)
+  		let celciusTemp = parseInt(parseInt(curr.main.temp) - 273.15) 
+  		curr.main.temp = celciusTemp
   		switch (curr.weather[0].main) {
   			case 'Clear':
   			curr.weather[0].icon = 'cloud-outline'
